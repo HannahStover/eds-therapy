@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  padding: 0;
+  min-height: 500px;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: transparent;
+  background: burlywood url('images/vaaaaaaase.png');
+  background-blend-mode: lighten;
+  text-align: center;
+  background-attachment: fixed;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar {
+  background-color: transparent;
+  color: black;
+  opacity: 60%;
+  position: fixed;
+  width: 100%;
+  font-weight: bold;
+}
+
+li:hover {
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.row-header {
+  text-align: center;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+h1 {
+  font-size: 8em;
+  letter-spacing: 3px;
+  opacity: 85%;
+}
+
+p {
+  font-weight: bold;
+  font-size: 1.5em;
+  opacity: 75%;
+}
+
+.btn {
+  margin-top: 3.5em;
+  margin-bottom: 3em;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s;
+  width: 11em;
+}
+
+.card {
+  opacity: 70%;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  border: solid lightgray;
+}
+
+.section {
+  min-height: 100vh;
+  height: 100%;
+  padding-top: 20px;
+}
+/* Media Queries */
+
+@media (max-width: 640px) {
+  .row-header {
+    margin-top: 5em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .btn {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s;
+    width: 10em;
+  }
+  .navbar {
+    background: transparent;
+    background-color: transparent;
+    opacity: 90%;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .row-header {
+    margin-top: 4.5em;
+    margin-bottom: 2.75em;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  .btn {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s;
+    width: 12em;
+  }
+  .navbar {
+    background: transparent;
+    background-color: transparent;
+    opacity: 90%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .row-header {
+    margin-top: 7em;
+    margin-bottom: 2.75em;
+  }
+  h1 {
+    font-size: 4em;
+  }
+  .btn {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s;
+    width: 15em;
+  }
+  .navbar {
+    background: transparent;
+    background-color: transparent;
+    opacity: 90%;
+  }
+}
+
+/* @media only screen and (min-width: 1250px) {
+  .row-header {
+    margin-top: 7em;
+    margin-bottom: 2.75em;
+  }
+  h1 {
+    font-size: 4em;
+  }
+  .btn {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s;
+    width: 15em;
+  }
+  .navbar {
+    background: transparent;
+    background-color: transparent;
+    opacity: 90%;
+  }
+} */
+
+.footer {
+  position: fixed;
+  display: inline-block;
+  text-align: center;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: white;
+  opacity: 60%;
+  padding-bottom: 5px;
+}
