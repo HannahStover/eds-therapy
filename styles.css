@@ -12,21 +12,30 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: transparent;
-  background: burlywood url('images/vaaaaaaase.png');
-  background-blend-mode: lighten;
+  background-color: white;
   text-align: center;
-  background-attachment: fixed;
   justify-content: center;
   background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.parallax {
+  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
+  background-blend-mode: screen;
+  /* Set a specific height */
+  height: 100vh;
+  min-height: 500px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .navbar {
-  background-color: transparent;
+  background-color: white;
   color: black;
-  opacity: 60%;
+  opacity: 50%;
   position: fixed;
   width: 100%;
   font-weight: bold;
@@ -40,18 +49,46 @@ li:hover {
 .row-header {
   text-align: center;
   justify-content: center;
-  margin-top: 3em;
 }
+
+/* Flaired edges, by Tomas Theunissen */
+
+hr {
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+hr:before {
+  /* Not really supposed to work, but does */
+  display: block;
+  content: '';
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+/* Text */
 
 h1 {
   font-size: 8em;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   opacity: 85%;
+}
+
+h2 {
+  font-size: 4em;
+  letter-spacing: 2px;
 }
 
 p {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1em;
   opacity: 75%;
 }
 
@@ -61,33 +98,90 @@ p {
   display: inline-block;
   text-align: center;
   transition: all 0.3s;
-  width: 11em;
+  width: 15em;
+  font-weight: bolder;
+  opacity: 75%;
 }
 
-.card {
-  opacity: 70%;
-  margin-top: 3em;
-  margin-bottom: 3em;
-  border: solid lightgray;
+/* Sections */
+
+.parallax-1 {
+  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
+  background-blend-mode: screen;
+  min-height: 50vh;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.parallax-2 {
+  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
+  background-blend-mode: lighten;
+  min-height: 75vh;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.parallax-3 {
+  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
+  background-blend-mode: screen;
+  min-height: 50vh;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.parallax-4 {
+  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
+  background-blend-mode: lighten;
+  min-height: 50vh;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.parallax-5 {
+  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
+  background-blend-mode: screen;
+  min-height: 65vh;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#services,
+#approach,
+#forms,
+#contact {
+  padding-top: 4%;
+  padding-bottom: 4.5%;
+}
+
+.frame {
+  border-color: #666;
+  border-image: none;
+  border-radius: 50% 50% 50% 50%;
+  border-style: solid;
+  border-width: 5px;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+}
+
+#contact,
+#approach {
+  background: white;
 }
 
 .section {
-  min-height: 100vh;
-  height: 100%;
-  padding-top: 20px;
+  min-height: 50vh;
+  padding-top: 3px;
 }
+
 /* Media Queries */
 
 @media (max-width: 640px) {
   .row-header {
-    margin-top: 5em;
+    margin-top: 3.5em;
   }
   h1 {
     font-size: 2em;
   }
   .btn {
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     display: inline-block;
     text-align: center;
     transition: all 0.3s;
@@ -95,18 +189,32 @@ p {
   }
   .navbar {
     background: transparent;
-    background-color: transparent;
+    background-color: #b18ea6;
     opacity: 90%;
+    font-weight: bold;
+  }
+  .section {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+  .parallax {
+    background-position: fixed;
   }
 }
 
 @media only screen and (max-width: 720px) {
   .row-header {
-    margin-top: 4.5em;
+    padding-top: 3.5em;
     margin-bottom: 2.75em;
   }
   h1 {
+    font-size: 4em;
+  }
+  h2 {
     font-size: 3em;
+  }
+  h5 {
+    font-size: 0.75em;
   }
   .btn {
     margin-top: 1em;
@@ -118,18 +226,74 @@ p {
   }
   .navbar {
     background: transparent;
-    background-color: transparent;
+    background-color: white;
     opacity: 90%;
+    font-weight: bold;
+  }
+  .parallax-1,
+  .parallax-2,
+  .parallax-3,
+  .parallax-4,
+  .parallax-5 {
+    background-attachment: scroll;
+  }
+  .parallax {
+    background-attachment: fixed;
+  }
+  .section {
+    padding-bottom: 4em;
+    margin-top: 4.5em;
+    background-color: white;
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 721px) {
   .row-header {
-    margin-top: 7em;
+    margin-top: 3.5em;
+    padding-top: 3em;
     margin-bottom: 2.75em;
   }
   h1 {
-    font-size: 4em;
+    font-size: 9em;
+  }
+  h3 {
+    font-size: 3em;
+    letter-spacing: 3px;
+    padding-top: 0.75em;
+  }
+  .btn {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    letter-spacing: 4px;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s;
+    width: 11em;
+  }
+  .navbar {
+    background: transparent;
+    background-color: white;
+    opacity: 80%;
+    font-weight: bold;
+  }
+  #services {
+    justify-content: space-between;
+  }
+  .section,
+  #servicesß {
+    margin-top: 6em;
+    padding-bottom: 4em;
+    background-color: white;
+  }
+}
+
+@media only screen and (min-width: 1367px) {
+  .row-header {
+    margin-bottom: 2.75em;
+    padding-top: 3em;
+  }
+  h1 {
+    font-size: 8.5em;
   }
   .btn {
     margin-top: 1em;
@@ -141,33 +305,14 @@ p {
   }
   .navbar {
     background: transparent;
-    background-color: transparent;
+    background-color: white;
     opacity: 90%;
+    font-weight: bold;
+  }
+  #services {
+    padding-bottom: 3em;
   }
 }
-
-/* @media only screen and (min-width: 1250px) {
-  .row-header {
-    margin-top: 7em;
-    margin-bottom: 2.75em;
-  }
-  h1 {
-    font-size: 4em;
-  }
-  .btn {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    display: inline-block;
-    text-align: center;
-    transition: all 0.3s;
-    width: 15em;
-  }
-  .navbar {
-    background: transparent;
-    background-color: transparent;
-    opacity: 90%;
-  }
-} */
 
 .footer {
   position: fixed;
@@ -179,4 +324,5 @@ p {
   background-color: white;
   opacity: 60%;
   padding-bottom: 5px;
+  padding-top: 5px;
 }

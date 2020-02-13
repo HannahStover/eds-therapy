@@ -11,6 +11,8 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/b633fc80e7.js" crossorigin="anonymous"></script>
+    <!-- Loaders -->
+    <link href="loaders.min.css" />
 
 
     <!-- Bootstrap CSS -->
@@ -25,9 +27,9 @@
     <link rel="Stylesheet" type="text/css" href="styles.css" />
   </head>
 
-  <body>
+  <body class="loader-inner ball-pulse">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md sticky-top navbar-light bg-light">
+    <nav class="navbar navbar-expand-md sticky-top navbar-light">
       <button
         class="navbar-toggler"
         type="button"
@@ -46,10 +48,10 @@
             <a class="nav-link" href="#">Home </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#approach">Approach</a>
+            <a class="nav-link" href="#services">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#services">Services</a>
+            <a class="nav-link" href="#approach">Approach</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#forms">Forms</a>
@@ -60,43 +62,80 @@
         </ul>
       </div>
     </nav>
+
     <!-- Header -->
-    <header>
-      <div class="container blend multiply">
-        <div class="row row-header h-100">
-          <div class="col-6-md mt-3">
+    <header class="parallax">
+      <div class="container">
+        <div class="row row-header">
+          <div>
             <h1>Insights</h1>
           </div>
           <div class="mt-3">
-            <p>A place for counseling, coaching, & development.</p>
+            <h3>A place for counseling, coaching, & development.</h3>
           </div>
         </div>
         <div class="row mb-4 pb-5">
-          <div class="col">
-            <button type="button" class="btn btn-outline-info btn-lg">
+          <div class="col col-md-4 col-sm-8"><a href="#approach">
+            <button type="button" class="btn btn-info btn-lg">
               Approach
-            </button>
+            </button></a>
           </div>
-          <div class="col">
-            <button type="button" class="btn btn-outline-info btn-lg">
+          <div class="col col-md-4 col-sm-8"><a href="#services">
+            <button type="button" class="btn btn-info btn-lg">
               Services
-            </button>
+            </button></a>
           </div>
-          <div class="col">
-            <button type="button" class="btn btn-outline-info btn-lg">
+          <div class="col col-md-4 col-sm-8"><a href="#contact">
+            <button type="button" class="btn btn-info btn-lg">
               Schedule
-            </button>
+            </button></a>
           </div>
         </div>
       </div>
     </header>
+    
+    <!-- Services -->
+    <div class="parallax-1 d-none d-xl-block"></div>
+    <div class="section" id="services">
+      <div class="container">
+          <h2>Services</h2><hr />
+          <div class="row mt-5">
+                <div class="col col-sm-6" id="Pre-Marital"><i class="fas fa-ring fa-3x text-info"></i>
+                  <p></p>
+                  <h5>Pre-marital therapy can help ensure that you and your partner
+                    have a strong and healthy relationship.</h5>
+                </div>
+                <div class="col col-sm-6" id="Marriage"><i class="fas fa-balance-scale fa-3x text-info"></i>
+
+
+                  <p ></p>
+                  <h5>Marriage counseling is important for addressing marital concerns
+                    and helps couples take time out of their busy lives to come
+                    together and focus on themselves and each other.</h5>
+                </div>
+                <div class="col col-sm-6" id="Family">
+<i class="fas fa-baby-carriage fa-3x text-info"></i>
+                    <p></p>
+                  <h5>The key to having and keeping a successful family unit moving
+                    forward is to be able to understand and identify the needs of
+                    the individual members and balance the well-being of the family
+                    unit.</h5>
+                </div>
+                <div class="col col-sm-6" id="Child-Adolescent"><i class="fas fa-child fa-3x text-info"></i>
+                  <p></p>
+                  <h5> Child counseling addresses issues that are negatively impacting
+                    a child's growth, development, mental health, and well-being.</h5>
+                </div>
+              </div>
+              </div>
+              </div>
 
     <!-- Approach -->
+    <div class="parallax-2 d-none d-md-block"></div>
     <div class="section" id="approach">
       <div class="container">
-        <div class="card">
-          <div class="card-body">
-            <h2>Approach</h2>
+            <h2>Approach</h2><hr />
+            <img src="images/Elaine.png" alt="Image of Elaine" class="frame">
           </div>
           <p>
             I recieved my MA in Marriage, Child, and Family therapy in 1992,
@@ -105,68 +144,14 @@
             to set long-term goals.
           </p>
         </div>
-      </div>
-    </div>
 
-    <!-- Services -->
-    <div class="section mb-5" id="services">
-      <div class="container">
-        <div class="card">
-          <div class="card-body">
-          <h2>Services</h2>
-          <div class="card-deck">
-          <div class="row">
 
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title">Pre-Marital</p>
-                  <h5 class="card-text">Pre-marital therapy can help ensure that you and your partner
-                    have a strong and healthy relationship.</h5>
-                </div>
-
-            </div>
-
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title">Marriage</p>
-                  <h5 class="card-text">Marriage counseling is important for addressing marital concerns
-                    and helps couples take time out of their busy lives to come
-                    together and focus on themselves and each other.</h5>
-                </div>
-
-            </div>
-
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title">Family</p>
-                  <h5 class="card-text">The key to having and keeping a successful family unit moving
-                    forward is to be able to understand and identify the needs of
-                    the individual members and balance the well-being of the family
-                    unit.</h5>
-                </div>
   
-            </div>
-
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title">Child + Adolescent</p>
-                  <h5 class="card-text"> Child counseling addresses issues that are negatively impacting
-                    a child's growth, development, mental health, and well-being.</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-            </div>
-          </div>
-      </div>
-    </div>
-
     <!-- Forms -->
+    <div class="parallax-3 d-none d-md-block"></div>
     <div class="section" id="forms">
       <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <h2>Forms</h2>
+          <h2>Forms</h2><hr />
         </div>
         <p>
           Please complete the following forms prior to your first session if
@@ -174,14 +159,13 @@
           free to address them when you meet with me. Thank you!
         </p>
       </div>
-      </div>
-    </div>
 
     <!-- Contact -->
+    <div class="parallax-4 d-none d-md-block"></div>
     <div class="section" id="contact">
       <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 pb-2 pt-3">
+        <div class="col-12 col-md-8 col-lg-6 pb-5">
           <!-- <h2 class="text-center">Scheduling + Questions</h2> -->
 <!--Form with header-->
         <form action="mail.php" method="post">
@@ -230,6 +214,8 @@
     </div>
       </div>
     </div>
+    
+    <div class="parallax-5 d-none d-md-block"></div>
 
     <!-- Footer -->
     <footer>
