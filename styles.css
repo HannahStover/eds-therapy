@@ -7,12 +7,13 @@ html {
 body {
   margin: 0;
   height: 100vh;
-  padding: 0;
+  /* padding: 2em; */
   min-height: 500px;
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+  background-color: #52635d;
+  color: #52635d;
   text-align: center;
   justify-content: center;
   background-position: center;
@@ -21,24 +22,73 @@ body {
   background-size: cover;
 }
 
-.parallax {
-  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
-  background-blend-mode: screen;
-  /* Set a specific height */
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  min-height: 500px;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-size: cover;
+  width: 100%;
+  background: rgb(23, 22, 22);
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 9999;
+  transition: opacity 0.3s linear;
+  opacity: 1;
+  transform: opacity 1s linear;
+  opacity: 0;
+  -webkit-animation: fadeout 4s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeout 4s; /* Firefox < 16 */
+  -ms-animation: fadeout 4s; /* Internet Explorer */
+  -o-animation: fadeout 4s; /* Opera < 12.1 */
+  animation: fadeout 4s;
+  pointer-events: none;
 }
 
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Parallax */
+
+/* .parallax {
+  background: #f0ede5 url('images/large-vase.png') no-repeat center;
+  background-blend-mode: luminosity;
+  height: 100vh;
+  min-height: 500px;
+  background-attachment: fixed;
+  background-size: cover;
+} */
+
+.parallax-section {
+  background-color: #52635d;
+  background-attachment: fixed;
+  height: 50vh;
+}
+
+.parallax-end {
+  background: #f0ede5 url('images/large-vase.png') no-repeat center;
+  background-blend-mode: luminosity;
+  height: 100vh;
+  min-height: 400px;
+  background-attachment: fixed;
+  background-size: auto;
+}
+
+/* Navbar */
+
 .navbar {
-  background-color: white;
+  background-color: #f0ede5;
   color: black;
-  opacity: 50%;
   position: fixed;
   width: 100%;
   font-weight: bold;
+  font-size: 1.25em;
 }
 
 li:hover {
@@ -46,175 +96,121 @@ li:hover {
   font-weight: bolder;
 }
 
+/* Sections */
+
+i {
+  color: #52635d;
+}
+
+.frame {
+  border-color: #52635d;
+  border-image: none;
+  border-radius: 50% 50% 50% 50%;
+  border-style: solid;
+  border-width: 2.5px;
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  filter: sepia(50%);
+}
+
+.section {
+  min-height: 50vh;
+  padding-top: 3em;
+  padding: 4em;
+  margin-top: 2em;
+  background: #f0ede5;
+}
+
+.page-content {
+  padding: 2em;
+  margin: 2em;
+}
+
 .row-header {
   text-align: center;
   justify-content: center;
+  padding: 2.75em;
 }
-
-/* Flaired edges, by Tomas Theunissen */
 
 hr {
-  overflow: visible; /* For IE */
-  height: 30px;
   border-style: solid;
-  border-color: black;
-  border-width: 1px 0 0 0;
-  border-radius: 20px;
-}
-hr:before {
-  /* Not really supposed to work, but does */
-  display: block;
-  content: '';
-  height: 30px;
-  margin-top: -31px;
-  border-style: solid;
-  border-color: black;
-  border-width: 0 0 1px 0;
-  border-radius: 20px;
+  border-color: #52635d;
+  font-weight: bold;
+  width: 20%;
 }
 
 /* Text */
 
 h1 {
   font-size: 8em;
-  letter-spacing: 4px;
-  opacity: 85%;
+  font-weight: bold;
+  letter-spacing: 5px;
+  margin-top: 0.5em;
 }
 
 h2 {
   font-size: 4em;
   letter-spacing: 2px;
 }
+h3 {
+  font-size: 4em;
+  letter-spacing: 2px;
+}
+
+h5 {
+  font-size: 1.5em;
+  font-weight: bold;
+  opacity: 75%;
+}
 
 p {
   font-weight: bold;
-  font-size: 1em;
+  font-size: 2.5em;
   opacity: 75%;
 }
 
 .btn {
-  margin-top: 3.5em;
   margin-bottom: 3em;
   display: inline-block;
   text-align: center;
   transition: all 0.3s;
-  width: 15em;
   font-weight: bolder;
-  opacity: 75%;
-}
-
-/* Sections */
-
-.parallax-1 {
-  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
-  background-blend-mode: screen;
-  min-height: 50vh;
-  background-attachment: fixed;
-  background-size: cover;
-}
-.parallax-2 {
-  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
-  background-blend-mode: lighten;
-  min-height: 75vh;
-  background-attachment: fixed;
-  background-size: cover;
-}
-.parallax-3 {
-  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
-  background-blend-mode: screen;
-  min-height: 50vh;
-  background-attachment: fixed;
-  background-size: cover;
-}
-.parallax-4 {
-  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
-  background-blend-mode: lighten;
-  min-height: 50vh;
-  background-attachment: fixed;
-  background-size: cover;
-}
-.parallax-5 {
-  background: #b18ea6 url('images/vaaaaaaase.png') no-repeat center;
-  background-blend-mode: screen;
-  min-height: 65vh;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-#services,
-#approach,
-#forms,
-#contact {
-  padding-top: 4%;
-  padding-bottom: 4.5%;
-}
-
-.frame {
-  border-color: #666;
-  border-image: none;
-  border-radius: 50% 50% 50% 50%;
-  border-style: solid;
-  border-width: 5px;
-  height: 200px;
-  width: 200px;
-  overflow: hidden;
-}
-
-#contact,
-#approach {
-  background: white;
-}
-
-.section {
-  min-height: 50vh;
-  padding-top: 3px;
+  font-size: 1em;
+  opacity: 90%;
+  color: #f0ede5;
+  background: #52635d;
+  border-radius: 30px;
+  height: 3.5em;
 }
 
 /* Media Queries */
 
-@media (max-width: 640px) {
-  .row-header {
-    margin-top: 3.5em;
-  }
-  h1 {
-    font-size: 2em;
-  }
-  .btn {
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    display: inline-block;
-    text-align: center;
-    transition: all 0.3s;
-    width: 10em;
-  }
-  .navbar {
-    background: transparent;
-    background-color: #b18ea6;
-    opacity: 90%;
-    font-weight: bold;
-  }
-  .section {
-    padding-top: 4em;
-    padding-bottom: 4em;
-  }
-  .parallax {
-    background-position: fixed;
-  }
-}
-
 @media only screen and (max-width: 720px) {
+  .parallax {
+    background: #f0ede5 url('images/large-vase.png') no-repeat bottom;
+    background-blend-mode: luminosity;
+    background-size: 200%;
+    height: 100vh;
+  }
   .row-header {
     padding-top: 3.5em;
     margin-bottom: 2.75em;
   }
   h1 {
-    font-size: 4em;
+    font-size: 5em;
+    font-weight: bold;
+    margin-bottom: 0.25em;
   }
   h2 {
+    font-size: 2.5em;
+  }
+  h3 {
     font-size: 3em;
   }
   h5 {
-    font-size: 0.75em;
+    font-size: 1.25em;
+    padding-bottom: 1em;
   }
   .btn {
     margin-top: 1em;
@@ -225,41 +221,96 @@ p {
     width: 12em;
   }
   .navbar {
-    background: transparent;
-    background-color: white;
-    opacity: 90%;
     font-weight: bold;
+    position: absolute;
+    width: 100%;
+    background-color: #f0ede5;
+    position: fixed;
   }
-  .parallax-1,
-  .parallax-2,
-  .parallax-3,
-  .parallax-4,
-  .parallax-5 {
-    background-attachment: scroll;
-  }
-  .parallax {
-    background-attachment: fixed;
+  .page-content {
+    padding: 2em;
+    margin: 1em;
   }
   .section {
+    margin-top: 5em;
+    background-color: #f0ede5;
+    padding-top: 5em;
+    padding: 1em;
+  }
+  hr {
+    width: 30%;
+  }
+  .frame {
+    height: 200px;
+    width: 200px;
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .row-header {
+    margin-top: 3em;
+    padding-top: 1em;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1em;
+  }
+  .head-form {
+    font-size: 0.5em;
+  }
+  .btn {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s;
+    width: 10em;
+  }
+  .navbar {
+    background: transparent;
+    background-color: #f0ede5;
+    font-weight: bold;
+  }
+  .section {
+    padding-top: 4em;
     padding-bottom: 4em;
-    margin-top: 4.5em;
-    background-color: white;
+    padding: 1em;
+  }
+  .page-content {
+    padding: 0.5em;
   }
 }
 
 @media only screen and (min-width: 721px) {
+  .page-content {
+    padding: 2.5em;
+  }
   .row-header {
     margin-top: 3.5em;
     padding-top: 3em;
     margin-bottom: 2.75em;
   }
+  .head-form {
+    font-size: 0.75em;
+  }
   h1 {
-    font-size: 9em;
+    font-size: 6em;
   }
   h3 {
     font-size: 3em;
     letter-spacing: 3px;
+    font-weight: bold;
+    opacity: 85%;
     padding-top: 0.75em;
+  }
+  p {
+    font-size: 1.5em;
   }
   .btn {
     margin-top: 1em;
@@ -272,18 +323,16 @@ p {
   }
   .navbar {
     background: transparent;
-    background-color: white;
-    opacity: 80%;
+    background-color: #f0ede5;
     font-weight: bold;
   }
   #services {
     justify-content: space-between;
   }
-  .section,
-  #servicesß {
-    margin-top: 6em;
-    padding-bottom: 4em;
-    background-color: white;
+  .section {
+    margin-top: 3em;
+    padding-bottom: 3em;
+    background-color: #f0ede5;
   }
 }
 
@@ -293,7 +342,7 @@ p {
     padding-top: 3em;
   }
   h1 {
-    font-size: 8.5em;
+    font-size: 8em;
   }
   .btn {
     margin-top: 1em;
@@ -305,8 +354,7 @@ p {
   }
   .navbar {
     background: transparent;
-    background-color: white;
-    opacity: 90%;
+    background-color: #f0ede5;
     font-weight: bold;
   }
   #services {
@@ -316,13 +364,11 @@ p {
 
 .footer {
   position: fixed;
-  display: inline-block;
   text-align: center;
   left: 0px;
   bottom: 0px;
   width: 100%;
-  background-color: white;
-  opacity: 60%;
+  background-color: #f0ede5;
   padding-bottom: 5px;
   padding-top: 5px;
 }
