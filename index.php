@@ -35,6 +35,9 @@
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -56,7 +59,7 @@
         viewBox="0 0 100 100"
         preserveAspectRatio="xMidYMid"
         class="lds-ripple"
-        style="background:0 0"
+        style="background: 0 0;"
       >
         <circle
           cx="50"
@@ -165,7 +168,8 @@
             </div>
             <div class="col-xs-12 mt-3">
               <h3>
-                A place for counseling, coaching, & spiritual development.
+                Solution Focused Brief Therapy
+                <!-- A place for counseling, coaching, & spiritual development. -->
               </h3>
             </div>
           </div>
@@ -264,26 +268,16 @@
               <p class="mt-4">
                 Elaine D. Stover received her MA in marriage, child, and family
                 therapy in 1992, having completed her BA in intercultural
-                studies in 1982. She works with individuals and families to help
-                navigate complex relationships and to set long-term goals.
+                studies in 1982. Elaine has a sense of humor and is culturally
+                sensitive.
+
+                <!-- She works with individuals and families to help
+                navigate complex relationships and to set long-term goals. -->
               </p>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Forms -->
-      <!-- <div class="parallax-3 d-none d-md-block"></div>
-    <div class="section" id="forms">
-      <div class="container">
-          <h2>Forms</h2><hr />
-        </div>
-        <p>
-          Please complete the following forms prior to your first session if
-          possible. If you have any questions about the forms, please feel
-          free to address them when you meet with me. Thank you!
-        </p>
-      </div> -->
 
       <!-- Contact -->
       <div class="parallax-section d-none d-sm-block"></div>
@@ -294,20 +288,29 @@
               <h2 class="text-center mb-4">Scheduling & Questions</h2>
               <hr />
               <!--Form with header-->
-              <form action="mail.php" method="post">
+              <!-- <form action="contact.php" method="post"> -->
+              
                 <!--Body-->
-                <div class="form-group pt-4">
+                <?php
+$action=$_REQUEST['action'];
+if ($action=="")    /* display the contact form */
+    {
+    ?>
+    <form  action="" method="post">
+                     <div class="form-group pt-4">
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
                         <i class="fas fa-user text"></i>
                       </div>
                     </div>
+                    <input type="hidden" name="action" value="submit">
                     <input
                       type="text"
                       class="form-control"
                       id="name"
                       name="name"
+                      value=""
                       placeholder="First and Last Name"
                       required
                     />
@@ -325,6 +328,7 @@
                       class="form-control"
                       id="name"
                       name="email"
+                      value=""
                       placeholder="Email Address"
                       required
                     />
@@ -341,21 +345,47 @@
                     <textarea
                       class="form-control"
                       rows="5"
+                      name="message"
                       placeholder="Your Message Here"
                       required
                     ></textarea>
                   </div>
                 </div>
-
+                <div 
+                class="g-recaptcha" 
+                data-sitekey="6LdRG6kZAAAAAEwsmfYPV3dZq56szVwyFr3HiCl6"></div>
                 <div class="text-center">
-                  <input
-                    type="submit"
-                    value="Send"
-                    class="btn rounded-0 py-2"
-                  />
-                </div>
-                <!-- </div> -->
+                
+                <input 
+                class="btn rounded-0 py-2"
+                type="submit"
+                name="submit"
+                value="Send email" />
+                </div> 
+               </div> 
               </form>
+              
+
+    <?php
+    } 
+else                /* send the submitted data */
+    {
+    $name=$_REQUEST['name'];
+    $email=$_REQUEST['email'];
+    $message=$_REQUEST['message'];
+    if (($name=="")||($email=="")||($message==""))
+        {
+        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+        }
+    else{        
+        $from="From: $name<$email>\r\nReturn-path: $email";
+        $subject="Message sent using your contact form";
+        mail("admin@elainedstover.com", $subject, $message, $from);
+        echo "Email sent!";
+        }
+      }
+?>
+
               <!--Form with header-->
             </div>
           </div>
@@ -382,6 +412,51 @@
       </div>
     </footer>
 
+    <?php
+function verifyUser($user_response_token) {
+  $params = array(
+    'secret' => '6LdRG6kZAAAAABs1Qz4-DFCVlc_ZOMVkxOKSdxw_',
+    'response' => $user_response_token
+  );
+  $post_data = http_build_query($params);
+  $client = new Client([
+    'headers' => [
+      'Content-Type' => 'application/x-www-form- urlencoded'
+    ],
+    'verify' => false,
+  ]);
+  $response = $client->post(
+    `https://www.google.com/recaptcha/api/siteverify`,
+    ['body' => $post_data]);
+    return json_decode($response->getBody(), true);
+}
+?>
+
+<!-- // const axios = require('axios') -->
+
+<!-- // axios.post(
+//   `https://www.google.com/recaptcha/api/siteverify`, {
+//   secret: '6LdRG6kZAAAAABs1Qz4-DFCVlc_ZOMVkxOKSdxw_',
+//   response: req.body['g-recaptcha-response']
+// }
+// })
+// .then((response) => {
+//   console.log(response);
+// }, (error) => {
+//   console.log(error);
+// });
+
+  // axios({
+  //   method: 'post',
+  //   url: 'https://www.google.com/recaptcha/api/siteverify',
+  //   data: {
+  //     secret: '6LdRG6kZAAAAABs1Qz4-DFCVlc_ZOMVkxOKSdxw_',
+  //     response: 'g-recaptcha-response'
+  //   }
+  // }); -->
+<!-- reCAPTCHA: -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <!-- My JS -->
     <script src="script.js"></script>
     <!-- Bootstrap JavaScript & JQuery -->
@@ -390,7 +465,7 @@
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
     ></script>
-    <script
+    <script 
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
       integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
       crossorigin="anonymous"
